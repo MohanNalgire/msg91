@@ -10,7 +10,7 @@
 	error_reporting(E_ALL);
  	ini_set('display_startup_errors', 1);
  	ini_set("display_errors",1);
- 	error_log(error_get_last(),3,"/var/www/html/kap/error.log");
+ 	error_log(error_get_last(),3,"/var/www/html/msg91/error.log");
  
 	$csv_mimetypes = array(
 	'text/csv', 
@@ -86,17 +86,17 @@ if (
 		curl_close($ch);
   }
 ################################### Manual configuration section ###############################
-$sms_url="http://54.254.130.116/api/sendhttp.php?";
+$sms_url="urlofapi";//sms provider url and directory path
 $querystring=http_build_query(
 	 array(
-	 	'authkey'=>"145746AMUVqj2EdDP58d24010",
+	 	'authkey'=>"",//authentication key from your sms api provider.
 	 	'mobiles'=>getMobileNo($target),// Mobile numbers from the csv file.
 	 	'message'=>$_POST['msg'],//Your sms message.
-	 	'sender'=>'Mohann',//Your api senderid
+	 	'sender'=>'',//Your api senderid
 	 	'route'=>'1',// Eg: route=1 for promotional, route=4 for transactional SMS. 
-	 	'country'=>'91',//Your country code.
+	 	'country'=>'91',//Your country code. ex 91 India
 	 	'flash'=>"1",// message type as flash message.
-	 	'unicode'=>"1",//Unicode true for other than english language character set support.
+	 	'unicode'=>"1",//Unicode true for other than english language character set support. ex 1 for Hindi
 	 	'response'=>"&response=json",//Your api expected response type.
 	 	'campaign'=>"test campaign",//Your campaign name.
         )
