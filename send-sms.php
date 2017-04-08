@@ -10,7 +10,13 @@
 	error_reporting(E_ALL);
  	ini_set('display_startup_errors', 1);
  	ini_set("display_errors",1);
- 	error_log(error_get_last(),3,"/var/www/html/msg91/error.log");
+ 	//$last_error=error_get_last();
+	//print_r($last_error);
+ 	error_log(
+	 	$php_errormsg,
+ 		3,
+ 		"/home/djabhilash/public_html/harshad.co.in/hc/android/backend/msg91_error.log"
+ 		);
  
 	$csv_mimetypes = array(
 	'text/csv', 
