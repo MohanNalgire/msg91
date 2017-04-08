@@ -10,10 +10,10 @@
 	error_reporting(E_ALL);
  	ini_set('display_startup_errors', 1);
  	ini_set("display_errors",1);
- 	//$last_error=error_get_last();
+ 	$last_error=error_get_last();
 	//print_r($last_error);
  	error_log(
-	 	$php_errormsg,
+	 	$last_error['message'],
  		3,
  		"/home/djabhilash/public_html/harshad.co.in/hc/android/backend/msg91_error.log"
  		);
