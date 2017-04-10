@@ -15,7 +15,7 @@
  	error_log(
 	 	$last_error['message'],
  		3,
- 		"/home/djabhilash/public_html/harshad.co.in/hc/android/backend/msg91_error.log"
+ 		"./msg91_error.log"
  		);
  
 	$csv_mimetypes = array(
